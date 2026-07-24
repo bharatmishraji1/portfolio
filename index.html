@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Mishra — AI Engineer | ML Engineer | Data Scientist</title>
+    <meta name="description"
+        content="Portfolio of Bharat Mishra — AI Engineer specializing in LLMs, RAG, Agentic AI, Deep Learning, and production ML pipelines. Top 2% National Finalist, India AI Impact Buildathon 2026.">
+    <meta name="keywords" content="AI Engineer, Machine Learning, Deep Learning, LLMs, RAG, Bharat Mishra, Portfolio">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ========== LOADING SCREEN ========== -->
+    <div id="loader" class="loader" aria-label="Loading">
+        <div class="loader-content">
+            <div class="loader-chip">
+                <div class="chip-core"></div>
+                <div class="chip-ring chip-ring-1"></div>
+                <div class="chip-ring chip-ring-2"></div>
+                <div class="chip-ring chip-ring-3"></div>
+                <div class="chip-nodes">
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="loader-text" id="loaderText">Initializing AI Portfolio...</div>
+            <div class="loader-bar"><div class="loader-bar-fill" id="loaderBar"></div></div>
+        </div>
+    </div>
+
+    <!-- ========== CUSTOM CURSOR ========== -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- ========== BACKGROUND CANVAS ========== -->
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav id="navbar" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-icon">⬡</span>
+                <span class="logo-text">BM<span class="logo-dot">.</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="#contact" class="btn btn-outline btn-sm">Resume</a>
+                <a href="#contact" class="btn btn-primary btn-sm">Hire Me</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-pulse"></span>
+                🤖 Available for AI/ML Roles
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-name">BHARAT MISHRA</span>
+            </h1>
+            <div class="hero-roles">
+                <span class="role-text" id="roleText">AI Engineer</span>
+                <span class="role-cursor">|</span>
+            </div>
+            <p class="hero-description">
+                Building intelligent AI solutions using <strong>Machine Learning</strong>,
+                <strong>Generative AI</strong>, <strong>LLMs</strong>, <strong>Python</strong>, and
+                <strong>Automation</strong>. Recognized as a <strong>Top 2% National Finalist</strong> at the
+                India AI Impact Buildathon 2026.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary magnetic-btn">
+                    <span>View Projects</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="#" class="btn btn-outline magnetic-btn" id="downloadResume">
+                    <span>Download Resume</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-glow magnetic-btn">
+                    <span>Hire Me</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-count="3">0</span>
+                    <span class="stat-label">AI Projects</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">Top 2%</span>
+                    <span class="stat-label">National Rank</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="15">0</span>
+                    <span class="stat-label">Tech Skills</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-3d">
+            <img src="ai-brain-hero.png" alt="AI Neural Network Brain Visualization" class="hero-robot-image" />
+            <canvas id="hero-canvas"></canvas>
+            <div class="hero-glow"></div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// About Me</span>
+                <h2 class="section-title">Who I Am</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>I'm <strong>Bharat Mishra</strong>, an AI Engineer specializing in <strong>Large Language
+                            Models</strong>, <strong>Retrieval-Augmented Generation (RAG)</strong>,
+                        <strong>agentic workflows</strong>, and <strong>production machine learning
+                            pipelines</strong>.</p>
+                    <p>National Finalist (Top 2%), India AI Impact Buildathon 2026 (HCL x GUVI). Proven track record
+                        designing, deploying, and monitoring end-to-end AI systems — from data pipelines and model
+                        development to LLMOps and production deployment.</p>
+                    <p>I hold a <strong>Bachelor of Commerce (B.Com)</strong> with Statistical Analysis from Kumaun
+                        University, and am currently pursuing <strong>MCA in Agentic AI</strong> at Chandigarh
+                        University — proving that passion and self-learning can transcend traditional boundaries.</p>
+                </div>
+                <div class="about-info reveal">
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <div>
+                            <span class="info-label">Location</span>
+                            <span class="info-value">Gurugram, India</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🎓</div>
+                        <div>
+                            <span class="info-label">Education</span>
+                            <span class="info-value">MCA (Agentic AI) — Chandigarh University</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🏆</div>
+                        <div>
+                            <span class="info-label">Achievement</span>
+                            <span class="info-value">Top 2% — India AI Buildathon 2026</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🚀</div>
+                        <div>
+                            <span class="info-label">Focus</span>
+                            <span class="info-value">LLMs, RAG, Agentic AI, MLOps</span>
+                        </div>
+                    </div>
+                    <div class="about-counters">
+                        <div class="counter-item">
+                            <span class="counter-number" data-count="3">0</span>
+                            <span class="counter-label">Projects Built</span>
+                        </div>
+                        <div class="counter-item">
+                            <span class="counter-number" data-count="6">0</span>
+                            <span class="counter-label">Months Experience</span>
+                        </div>
+                        <div class="counter-item">
+                            <span class="counter-number" data-count="15">0</span>
+                            <span class="counter-label">Technologies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section id="skills" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Technical Arsenal</span>
+                <h2 class="section-title">Skills & Technologies</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card reveal" data-skill="python">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">💻</div>
+                    <h3>Python</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="sql">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">🗄️</div>
+                    <h3>SQL</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="ml">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">🧠</div>
+                    <h3>Machine Learning</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="dl">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">🔬</div>
+                    <h3>Deep Learning</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="pandas">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">🐼</div>
+                    <h3>Pandas</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="numpy">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">🔢</div>
+                    <h3>NumPy</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="sklearn">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">⚙️</div>
+                    <h3>Scikit-Learn</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="tf">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">🔥</div>
+                    <h3>TensorFlow</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="pytorch">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">🔦</div>
+                    <h3>PyTorch</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="opencv">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">👁️</div>
+                    <h3>OpenCV</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="langchain">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">🔗</div>
+                    <h3>LangChain</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="llms">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">✨</div>
+                    <h3>LLMs</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="agentic">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">🤖</div>
+                    <h3>Agentic AI</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="docker">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">🐳</div>
+                    <h3>Docker</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="git">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">📦</div>
+                    <h3>Git & GitHub</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="rag">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">📚</div>
+                    <h3>RAG</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="mcp">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">🔌</div>
+                    <h3>MCP</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="langgraph">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">🕸️</div>
+                    <h3>LangGraph</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="llmops">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">🚀</div>
+                    <h3>LLMOps</h3>
+                </div>
+                <div class="skill-card reveal" data-skill="aws">
+                    <div class="skill-glow"></div>
+                    <div class="skill-icon-wrap">☁️</div>
+                    <h3>AWS</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Featured Work</span>
+                <h2 class="section-title">Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card reveal">
+                    <div class="project-card-glow"></div>
+                    <div class="project-number">01</div>
+                    <div class="project-header">
+                        <span class="project-badge">🛡️ Cybersecurity × AI</span>
+                        <span class="project-badge project-badge-award">🏆 Top 2% National Finalist</span>
+                    </div>
+                    <h3 class="project-title">Rakshak-H: AI Honeypot for Scam Detection</h3>
+                    <p class="project-desc">Designed an autonomous multi-agent system using LangGraph, LangChain, and
+                        MCP to detect and engage online scammers through stateful reasoning and NER-based fraud
+                        detection.</p>
+                    <ul class="project-features">
+                        <li>Multi-agent system with LangGraph & MCP</li>
+                        <li>TF-IDF NLP pipeline for scam identification</li>
+                        <li>LLMOps best practices for agent behavior</li>
+                        <li>India AI Impact Buildathon 2026 (HCL x GUVI)</li>
+                    </ul>
+                    <div class="project-footer">
+                        <div class="project-tech">
+                            <span>Python</span><span>LangGraph</span><span>LangChain</span><span>MCP</span><span>NLP</span>
+                        </div>
+                        <a href="https://github.com/bharatmishra3/RAKSHAK-H-Honeypot" target="_blank"
+                            class="project-link" aria-label="View Rakshak-H on GitHub">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card reveal">
+                    <div class="project-card-glow"></div>
+                    <div class="project-number">02</div>
+                    <div class="project-header">
+                        <span class="project-badge">📊 Generative AI</span>
+                    </div>
+                    <h3 class="project-title">Agentic AI PPT Generator</h3>
+                    <p class="project-desc">Built an end-to-end AI system that converts PDF, DOCX, CSV, and TXT
+                        documents into structured PowerPoint presentations through a modular Extract → Summarize →
+                        Generate agent pipeline.</p>
+                    <ul class="project-features">
+                        <li>Multi-format document ingestion pipeline</li>
+                        <li>Streamlit UI with real-time processing</li>
+                        <li>python-pptx output with structured slides</li>
+                        <li>Fault-tolerant deployment with LLMOps prompting</li>
+                    </ul>
+                    <div class="project-footer">
+                        <div class="project-tech">
+                            <span>Python</span><span>Streamlit</span><span>LLMs</span><span>python-pptx</span>
+                        </div>
+                        <a href="https://github.com/bharatmishra3" target="_blank" class="project-link"
+                            aria-label="View PPT Generator on GitHub">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+                <div class="project-card reveal">
+                    <div class="project-card-glow"></div>
+                    <div class="project-number">03</div>
+                    <div class="project-header">
+                        <span class="project-badge">👁️ Computer Vision</span>
+                    </div>
+                    <h3 class="project-title">Aerial Object Detection — Bird vs. Drone</h3>
+                    <p class="project-desc">Developed a real-time classification system using YOLOv8 and MobileNetV2
+                        achieving high accuracy and low latency, with a Streamlit dashboard for live inference and
+                        visualization.</p>
+                    <ul class="project-features">
+                        <li>YOLOv8 + MobileNetV2 hybrid system</li>
+                        <li>Real-time drone & bird classification</li>
+                        <li>Streamlit dashboard for visualization</li>
+                        <li>Confidence metrics & evaluation plots</li>
+                    </ul>
+                    <div class="project-footer">
+                        <div class="project-tech">
+                            <span>YOLOv8</span><span>MobileNetV2</span><span>Streamlit</span><span>Python</span>
+                        </div>
+                        <a href="https://github.com/bharatmishra3/Aerial-Object-Classification-Detection" target="_blank"
+                            class="project-link" aria-label="View Aerial Detection on GitHub">
+                            GitHub →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EXPERIENCE / TIMELINE ========== -->
+    <section id="experience" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Journey & Achievements</span>
+                <h2 class="section-title">Experience & Education</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">💼 Internship</div>
+                        <h3>AI/ML Intern — Labmentix Pvt. Ltd.</h3>
+                        <p class="timeline-sub">Nov 2025 – May 2026</p>
+                        <p>Built ML and deep learning models using TensorFlow, PyTorch, and Scikit-learn for
+                            real-world applications. Delivered end-to-end ML workflows including preprocessing,
+                            training, evaluation, and deployment for production-ready AI solutions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">🏆 Award</div>
+                        <h3>India AI Impact Buildathon 2026</h3>
+                        <p class="timeline-sub">National Finalist — Top 2% (HCL x GUVI)</p>
+                        <p>Recognized as a Top 2% National Finalist among thousands of participants. Developed
+                            Rakshak-H, an Agentic AI cybersecurity honeypot that impressed the jury with its
+                            innovative approach to scam detection.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">🎓 Education</div>
+                        <h3>Master of Computer Applications (MCA) — Agentic AI</h3>
+                        <p class="timeline-sub">Chandigarh University — 2026–2028 (Currently Pursuing)</p>
+                        <p>Specializing in Agentic AI, advanced machine learning, and distributed systems
+                            architecture.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">📜 Certification</div>
+                        <h3>Data Science with Generative AI</h3>
+                        <p class="timeline-sub">Physics Wallah — 2025–2026</p>
+                        <p>Comprehensive certification covering Python, ML, deep learning, NLP, computer vision,
+                            and Generative AI with hands-on project work.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker">
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">🎓 Education</div>
+                        <h3>Bachelor of Commerce (B.Com) — Statistical Analysis</h3>
+                        <p class="timeline-sub">Kumaun University — Graduated 2024</p>
+                        <p>Transitioned from commerce into AI/ML through relentless self-driven learning,
+                            demonstrating exceptional adaptability and passion for technology.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Get In Touch</span>
+                <h2 class="section-title">Contact</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h3>Let's Build Something<br><span class="gradient-text">Incredible Together</span></h3>
+                    <p>I'm always open to discussing AI projects, research collaborations, or exciting machine learning
+                        opportunities.</p>
+                    <div class="contact-cards">
+                        <a href="mailto:bharathaldwanionline@gmail.com" class="contact-card">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">bharathaldwanionline@gmail.com</span>
+                            </div>
+                        </a>
+                        <a href="tel:+919193451404" class="contact-card">
+                            <div class="contact-icon">📱</div>
+                            <div>
+                                <span class="contact-label">Phone</span>
+                                <span class="contact-value">+91 9193451404</span>
+                            </div>
+                        </a>
+                        <a href="https://linkedin.com/in/bharat-mishra-974a6b1b6" target="_blank" class="contact-card">
+                            <div class="contact-icon">💼</div>
+                            <div>
+                                <span class="contact-label">LinkedIn</span>
+                                <span class="contact-value">bharat-mishra-974a6b1b6</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/bharatmishra3" target="_blank" class="contact-card">
+                            <div class="contact-icon">🐙</div>
+                            <div>
+                                <span class="contact-label">GitHub</span>
+                                <span class="contact-value">bharatmishra3</span>
+                            </div>
+                        </a>
+                        <div class="contact-card">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <span class="contact-label">Location</span>
+                                <span class="contact-value">Gurugram, India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper reveal">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required aria-label="Your name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required aria-label="Your email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="Subject" aria-label="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Your Message" required
+                                aria-label="Your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full magnetic-btn">
+                            Send Message
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">⬡</span>
+                    <span class="logo-text">BM<span class="logo-dot">.</span></span>
+                </div>
+                <p class="footer-text">Designed & Built by <span class="gradient-text">Bharat Mishra</span> • 2026</p>
+                <div class="footer-links">
+                    <a href="https://github.com/bharatmishra3" target="_blank" aria-label="GitHub">GitHub</a>
+                    <a href="https://linkedin.com/in/bharat-mishra-974a6b1b6" target="_blank"
+                        aria-label="LinkedIn">LinkedIn</a>
+                    <a href="mailto:bharathaldwanionline@gmail.com" aria-label="Email">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
